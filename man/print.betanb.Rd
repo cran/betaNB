@@ -5,7 +5,7 @@
 \title{Print Method for an Object of Class
 \code{betanb}}
 \usage{
-\method{print}{betanb}(x, alpha = c(0.05, 0.01, 0.001), type = "pc", digits = 4, ...)
+\method{print}{betanb}(x, alpha = NULL, type = "pc", digits = 4, ...)
 }
 \arguments{
 \item{x}{Object of Class \code{betanb},
@@ -14,11 +14,15 @@ the output of the
 \code{BetaNB()},
 \code{RSqNB()},
 \code{SCorNB()},
-\code{DeltaRSqNB()}, or
-\code{PCorNB()}
+\code{DeltaRSqNB()},
+\code{PCorNB()}, or
+\code{DiffBetaNB()}
 functions.}
 
-\item{alpha}{Significance level.}
+\item{alpha}{Numeric vector.
+Significance level \eqn{\alpha}.
+If \code{alpha = NULL},
+use the argument \code{alpha} used in \code{x}.}
 
 \item{type}{Charater string.
 Confidence interval type, that is,
@@ -41,19 +45,6 @@ confidence intervals.
 \description{
 Print Method for an Object of Class
 \code{betanb}
-}
-\examples{
-# Fit the regression model
-object <- lm(QUALITY ~ NARTIC + PCTGRT + PCTSUPP, data = nas1982)
-# Generate bootstrap covariance matrices
-# (use a large R, for example, R = 5000 for actual research)
-nb <- NB(object, R = 50)
-# Generate confidence intervals for standardized regression slopes
-std <- BetaNB(nb)
-# Method ---------------------------------------------------------
-print(std, type = "pc")
-print(std, type = "bc")
-print(std, type = "bca")
 }
 \author{
 Ivan Jacob Agaloos Pesigan

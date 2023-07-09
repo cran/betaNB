@@ -1,6 +1,12 @@
+# betaNB 1.0.2
+
+## Patch
+
+* Edits to documentation.
+
 # betaNB 1.0.1
 
-## Minor
+## Patch
 
 * Edits to the DESCRIPTION file.
 

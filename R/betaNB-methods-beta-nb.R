@@ -16,27 +16,20 @@
 #'   `BetaNB()`,
 #'   `RSqNB()`,
 #'   `SCorNB()`,
-#'   `DeltaRSqNB()`, or
-#'   `PCorNB()`
+#'   `DeltaRSqNB()`,
+#'   `PCorNB()`, or
+#'   `DiffBetaNB()`
 #'   functions.
+#' @param alpha Numeric vector.
+#'   Significance level \eqn{\alpha}.
+#'   If `alpha = NULL`,
+#'   use the argument `alpha` used in `x`.
 #' @inheritParams summary.betanb
 #'
-#' @examples
-#' # Fit the regression model
-#' object <- lm(QUALITY ~ NARTIC + PCTGRT + PCTSUPP, data = nas1982)
-#' # Generate bootstrap covariance matrices
-#' # (use a large R, for example, R = 5000 for actual research)
-#' nb <- NB(object, R = 50)
-#' # Generate confidence intervals for standardized regression slopes
-#' std <- BetaNB(nb)
-#' # Method ---------------------------------------------------------
-#' print(std, type = "pc")
-#' print(std, type = "bc")
-#' print(std, type = "bca")
-#' @export
 #' @keywords methods
+#' @export
 print.betanb <- function(x,
-                         alpha = c(0.05, 0.01, 0.001),
+                         alpha = NULL,
                          type = "pc",
                          digits = 4,
                          ...) {
@@ -102,11 +95,15 @@ print.betanb <- function(x,
 #'   `BetaNB()`,
 #'   `RSqNB()`,
 #'   `SCorNB()`,
-#'   `DeltaRSqNB()`, or
-#'   `PCorNB()`
+#'   `DeltaRSqNB()`,
+#'   `PCorNB()`, or
+#'   `DiffBetaNB()`
 #'   functions.
 #' @param ... additional arguments.
-#' @param alpha Significance level.
+#' @param alpha Numeric vector.
+#'   Significance level \eqn{\alpha}.
+#'   If `alpha = NULL`,
+#'   use the argument `alpha` used in `object`.
 #' @param type Charater string.
 #'   Confidence interval type, that is,
 #'   `type = "pc"` for percentile;
@@ -114,22 +111,10 @@ print.betanb <- function(x,
 #'   `type = "bca"` for bias corrected and accelerated.
 #' @param digits Digits to print.
 #'
-#' @examples
-#' # Fit the regression model
-#' object <- lm(QUALITY ~ NARTIC + PCTGRT + PCTSUPP, data = nas1982)
-#' # Generate bootstrap covariance matrices
-#' # (use a large R, for example, R = 5000 for actual research)
-#' nb <- NB(object, R = 50)
-#' # Generate confidence intervals for standardized regression slopes
-#' std <- BetaNB(nb)
-#' # Method ---------------------------------------------------------
-#' summary(std, type = "pc")
-#' summary(std, type = "bc")
-#' summary(std, type = "bca")
-#' @export
 #' @keywords methods
+#' @export
 summary.betanb <- function(object,
-                           alpha = c(0.05, 0.01, 0.001),
+                           alpha = NULL,
                            type = "pc",
                            digits = 4,
                            ...) {
@@ -186,18 +171,8 @@ summary.betanb <- function(object,
 #'
 #' @inheritParams summary.betanb
 #'
-#' @examples
-#' # Fit the regression model
-#' object <- lm(QUALITY ~ NARTIC + PCTGRT + PCTSUPP, data = nas1982)
-#' # Generate bootstrap covariance matrices
-#' # (use a large R, for example, R = 5000 for actual research)
-#' nb <- NB(object, R = 50)
-#' # Generate confidence intervals for standardized regression slopes
-#' std <- BetaNB(nb)
-#' # Method ---------------------------------------------------------
-#' vcov(std)
-#' @export
 #' @keywords methods
+#' @export
 vcov.betanb <- function(object,
                         ...) {
   return(
@@ -214,18 +189,8 @@ vcov.betanb <- function(object,
 #'
 #' @inheritParams summary.betanb
 #'
-#' @examples
-#' # Fit the regression model
-#' object <- lm(QUALITY ~ NARTIC + PCTGRT + PCTSUPP, data = nas1982)
-#' # Generate bootstrap covariance matrices
-#' # (use a large R, for example, R = 5000 for actual research)
-#' nb <- NB(object, R = 50)
-#' # Generate confidence intervals for standardized regression slopes
-#' std <- BetaNB(nb)
-#' # Method ---------------------------------------------------------
-#' coef(std)
-#' @export
 #' @keywords methods
+#' @export
 coef.betanb <- function(object,
                         ...) {
   return(
@@ -247,20 +212,8 @@ coef.betanb <- function(object,
 #'   If missing, all parameters are considered.
 #' @param level the confidence level required.
 #'
-#' @examples
-#' # Fit the regression model
-#' object <- lm(QUALITY ~ NARTIC + PCTGRT + PCTSUPP, data = nas1982)
-#' # Generate bootstrap covariance matrices
-#' # (use a large R, for example, R = 5000 for actual research)
-#' nb <- NB(object, R = 50)
-#' # Generate confidence intervals for standardized regression slopes
-#' std <- BetaNB(nb)
-#' # Method ---------------------------------------------------------
-#' confint(std, level = 0.95, type = "pc")
-#' confint(std, level = 0.95, type = "bc")
-#' confint(std, level = 0.95, type = "bca")
-#' @export
 #' @keywords methods
+#' @export
 confint.betanb <- function(object,
                            parm = NULL,
                            level = 0.95,
@@ -273,11 +226,19 @@ confint.betanb <- function(object,
       )
     )
   }
+  ci <- .CI(
+    object = object,
+    alpha = 1 - level[1],
+    type = type
+  )[parm, 4:5, drop = FALSE]
+  varnames <- colnames(ci)
+  varnames <- gsub(
+    pattern = "%",
+    replacement = " %",
+    x = varnames
+  )
+  colnames(ci) <- varnames
   return(
-    .CI(
-      object = object,
-      alpha = 1 - level[1],
-      type = type
-    )[parm, 4:5]
+    ci
   )
 }

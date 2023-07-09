@@ -10,25 +10,28 @@
 #'
 #' @param object Object of class `betanb`.
 #' @param alpha Numeric vector.
-#'   Significance level.
+#'   Significance level \eqn{\alpha}.
 #' @param type Charater string.
 #'   Confidence interval type, that is,
 #'   `type = "pc"` for percentile;
 #'   `type = "bc"` for bias corrected;
 #'   `type = "bca"` for bias corrected and accelerated.
 #'
-#' @export
 #' @family Beta Nonparametric Bootstrap Functions
 #' @keywords betaNB ci internal
+#' @noRd
 .CI <- function(object,
-                alpha = c(0.05, 0.01, 0.001),
+                alpha = NULL,
                 type = "pc") {
   stopifnot(
-    methods::is(
+    inherits(
       object,
       "betanb"
     )
   )
+  if (is.null(alpha)) {
+    alpha <- object$args$alpha
+  }
   probs <- .PCProbs(alpha = alpha)
   thetahatstar <- do.call(
     what = "rbind",
