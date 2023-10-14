@@ -1,14 +1,14 @@
-da6de79a4854977bec3dd5ce1869cef9 *DESCRIPTION
+5d177f534e7339e1d2efb04692ccc9a1 *DESCRIPTION
 0c864b2b29818a5afc91de86b712133f *LICENSE
 710544339da7d513151a3cdc0202a630 *NAMESPACE
-32208f05eb77104be80e8199accd9a18 *NEWS.md
+cf271281b91b898f0419f5146e68b8a5 *NEWS.md
 9d7f1b719a91b72dd7d998b5e26eaa42 *R/betaNB-beta-nb.R
 f383f7b7827b6a356f746046c3d0881f *R/betaNB-ci.R
 cc778dc9176c91bf7b2bda6e23379089 *R/betaNB-delta-r-sq-nb.R
 3e073415e202235a5b3bed9ef126a366 *R/betaNB-diff-beta-nb.R
 9da7eb108239d1eb1749666f51e086ea *R/betaNB-methods-beta-nb.R
 d0eedbf35542a2703341c8ae737c4f06 *R/betaNB-methods-nb.R
-ee5d658070a7b0e184663ef7c7fca9a8 *R/betaNB-nb.R
+29660872ade135f27cc7be3c98ed88a4 *R/betaNB-nb.R
 703e4983b4a348c61c93469a57a3c866 *R/betaNB-p-cor-nb.R
 7b72efdff74c197268f5f6e6667d7906 *R/betaNB-package.R
 967ab9b3fd823e23bfe68a9d0c9d9944 *R/betaNB-r-sq-nb.R
@@ -63,9 +63,3 @@ d25b3a9c692dc74e4db02c98152c676b *tests/testthat/test-betaNB-nb.R
 7c3445223763909f0a330ab23755302b *tests/testthat/test-betaNB-p-cor-nb-est.R
 5c33349b00ef0bbbfd9f64722cc76ff9 *tests/testthat/test-betaNB-r-sq-nb-est.R
 bb18f2946017683ce01057abe9fa3de1 *tests/testthat/test-betaNB-s-cor-nb-est.R
-73c27b816d7be8daa29247727bac65ea *tools/clone.sh
-66f7e74fcda834373ce5ffbfe8bc3eea *tools/make-config.R
-2aa3a676db350ddafb83d04168af1d6f *tools/make-packages.R
-c69d6c208a4914652ba2bb19915351ea *tools/make-project.R
-f88a1916ac97fd1d9f99a560ea715166 *tools/project.R
-de104874a8e06de49a804aaa93699cd4 *tools/secrets.R

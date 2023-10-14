@@ -1,3 +1,9 @@
+# betaNB 1.0.3
+
+## Patch
+
+* Minor edits to setting seed.
+
 # betaNB 1.0.2
 
 ## Patch
