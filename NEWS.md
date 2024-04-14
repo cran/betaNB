@@ -1,3 +1,9 @@
+# betaNB 1.0.4
+
+## Patch
+
+* Minor documentation edits.
+
 # betaNB 1.0.3
 
 ## Patch

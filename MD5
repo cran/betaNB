@@ -1,7 +1,7 @@
-5d177f534e7339e1d2efb04692ccc9a1 *DESCRIPTION
+c3baf85a1c0b50c86ff16c4cdeaa6047 *DESCRIPTION
 0c864b2b29818a5afc91de86b712133f *LICENSE
 710544339da7d513151a3cdc0202a630 *NAMESPACE
-cf271281b91b898f0419f5146e68b8a5 *NEWS.md
+6c0f66e52dadd43259b3c21a4d60eb95 *NEWS.md
 9d7f1b719a91b72dd7d998b5e26eaa42 *R/betaNB-beta-nb.R
 f383f7b7827b6a356f746046c3d0881f *R/betaNB-ci.R
 cc778dc9176c91bf7b2bda6e23379089 *R/betaNB-delta-r-sq-nb.R
@@ -37,8 +37,8 @@ b64acb36cc8fc9ec668c601d9cef2d3f *R/strRegression-p-cor-sq-dot.R
 3cd80c3fd8b9940c280f680f2e5fb5d2 *R/strRegression-r-sq-bar-dot.R
 6229345efd410db16611ff5869cdab1e *R/strRegression-r-sq-of-sigma-dot.R
 271a43ea766f299c64f17df082724ba5 *R/strRegression-s-p-cor-dot.R
-7080893e02c49cd296d4424b9be55069 *build/partial.rdb
-b7e66fce69e9127d9e23f08141e25806 *data/nas1982.rda
+20c8d3f97d93e2e318a22508275b5a02 *build/partial.rdb
+ed948441fb6dcb4b9f3bed9a10208ee7 *data/nas1982.rda
 e8bfccc5f874570cd1c3086a4d9c94c0 *inst/CITATION
 0b242dfc4ae5b061411275d0cf29f9ed *man/BetaNB.Rd
 83279bb3fb4f6bdb01a1c353070e2dab *man/DeltaRSqNB.Rd
@@ -47,7 +47,7 @@ f4718896e985ee7d8945c63535b7590a *man/NB.Rd
 e50b0a52e467bb4467c9edde825748f1 *man/PCorNB.Rd
 27b0acb297f5a5a21756dd5d742cdc0b *man/RSqNB.Rd
 2bcf64ed55a49c8d3ed2373c61818bb3 *man/SCorNB.Rd
-e00d299dd74944fca332b1abd3ea4bc5 *man/betaNB-package.Rd
+2ca3cedb3f4023a1a68457bc722e9095 *man/betaNB-package.Rd
 384bd362129160e4c161aa46f3f948ee *man/coef.betanb.Rd
 eee76d57f2e11f5cb2fbf7c40d5ee4d0 *man/confint.betanb.Rd
 065bd996ab7906aaaa86ad9db1559fc0 *man/nas1982.Rd
