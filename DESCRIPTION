@@ -1,6 +1,6 @@
 Package: betaNB
 Title: Bootstrap for Regression Effect Sizes
-Version: 1.0.5
+Version: 1.0.6
 Authors@R: 
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -23,11 +23,11 @@ LazyData: true
 Depends: R (>= 3.5.0)
 Imports: stats
 Suggests: knitr, rmarkdown, testthat
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2025-01-09 22:31:38 UTC; root
-Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
-    (<https://orcid.org/0000-0003-4818-8420>)
+Packaged: 2025-10-19 02:40:52 UTC; root
+Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
+    <https://orcid.org/0000-0003-4818-8420>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
 Repository: CRAN
-Date/Publication: 2025-01-10 03:10:01 UTC
+Date/Publication: 2025-10-19 18:00:02 UTC
